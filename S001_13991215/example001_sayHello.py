@@ -9,5 +9,7 @@ students_list = [
 'Hamed',
 'Masoud'
 ]
-for name in students_list:
-    print("Hello",name)
+# for name in students_list:
+#     print("Hello",name)
+
+print(*map(lambda x:f'Hello {x}', students_list), sep='\n')
