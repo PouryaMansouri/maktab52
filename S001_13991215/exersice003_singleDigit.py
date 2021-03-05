@@ -14,9 +14,11 @@ n = input()
 #2
 
 while(len(n)>1):
-    list_number = list(map(int,list(n)))
-    sum_llist = sum(list_number)
-    n= str(sum_llist)
+    # list_number = list(map(int,list(n)))
+    # sum_llist = sum(list_number)
+    # n= str(sum_llist)
+    n = str(sum(map(int,n)))
+
 print(n)
 
 
