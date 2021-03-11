@@ -1,12 +1,6 @@
-i = 0
-while i < 30:
-    i+=1
-    print(i)
+def func(a, b=3, c=0, d=10):
+    return a, b, c, d
 
-    if i %3 ==0:
-        i+=1
-        continue
-    if i//11:
-        break
 
-print("The end")
+res = func(1, c=12)
+print(res)
