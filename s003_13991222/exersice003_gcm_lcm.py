@@ -11,12 +11,12 @@ def GCM(n, m):
 
     return gcm
 
-def LCM(n,m):
+
+def LCM(n, m):
     minimun = min(m, n)
     maximun = max(m, n)
-    return (n/GCM(n,m))*m
+    return (n / GCM(n, m)) * m
+
 
 print(GCM(n, m))
-print(int(LCM(n,m)))
-
-
+print(int(LCM(n, m)))
