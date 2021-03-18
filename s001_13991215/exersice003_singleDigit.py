@@ -3,20 +3,20 @@ n = input()
 #1
 
 # n_in_loop=0
-# while(len(n)>1):
-#     for i in n:
+# while(len(num)>1):
+#     for i in num:
 #         n_in_loop += int(i)
-#     n = str(n_in_loop)
+#     num = str(n_in_loop)
 #     n_in_loop = 0
 
-# print(int(n))
+# print(int(num))
 
 #2
 
 while(len(n)>1):
-    # list_number = list(map(int,list(n)))
+    # list_number = list(map(int,list(num)))
     # sum_llist = sum(list_number)
-    # n= str(sum_llist)
+    # num= str(sum_llist)
     n = str(sum(map(int,n)))
 
 print(n)
