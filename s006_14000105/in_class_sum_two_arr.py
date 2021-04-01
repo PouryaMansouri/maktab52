@@ -1,8 +1,8 @@
 arr1 = [-1, 7, 9, 2, 1]
 arr2 = [-1, -1, 2, 5, 4]
 
-# arr1 = [-1, 9, 2, 5, 4]
-# arr2 = [1, 7, 9, 2, 1]
+# array1 = [-1, 9, 2, 5, 4]
+# array2 = [1, 7, 9, 2, 1]
 arr3 = [0 for i in range(len(arr1) + 1)]
 
 operators = {
