@@ -64,9 +64,9 @@ def sub_arr(array1, array2):
 
 
 def multi(array1, array2):
-    arr3 = [-1 for i in range(len(arr2) + 1)]
-    arr3[-1]=1
-    while
+    arr3 = [-1 for i in array2]
+    arr3[-1] = 1
+
 
 operators = {
     '+': lambda x, y: sum_arr(x, y),

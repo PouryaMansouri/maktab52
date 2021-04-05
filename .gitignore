@@ -73,13 +73,13 @@ pytestdebug.log
 # Translations
 *.mo
 
-# Django stuff:
+# Django product:
 
-# Flask stuff:
+# Flask product:
 instance/
 .webassets-cache
 
-# Scrapy stuff:
+# Scrapy product:
 .scrapy
 
 # Sphinx documentation
@@ -109,7 +109,7 @@ ipython_config.py
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
-# Celery stuff
+# Celery product
 celerybeat-schedule
 celerybeat.pid
 
@@ -154,7 +154,7 @@ dmypy.json
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
-# User-specific stuff
+# User-specific product
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
@@ -270,11 +270,11 @@ fabric.properties
 
 # Translations
 
-# Django stuff:
+# Django product:
 
-# Flask stuff:
+# Flask product:
 
-# Scrapy stuff:
+# Scrapy product:
 
 # Sphinx documentation
 
@@ -294,7 +294,7 @@ fabric.properties
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
 
-# Celery stuff
+# Celery product
 
 # SageMath parsed files
 
