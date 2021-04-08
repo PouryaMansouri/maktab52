@@ -32,7 +32,7 @@ class Account:
         if amount <= self.__class__.__minimum_balance:
             raise Exception("You hove not enough account balance")
 
-    # TODO: how add return instead of print in withdraw and deposit
+    # TODO: better way to return result
     def transaction(self, account, amount):
         r = ''
         r += self.withdraw(amount) + '\n'
