@@ -47,9 +47,17 @@ class Triangle:
             return "Isosceles triangle"
 
         elif any([
-            round((__p1_p2 ** 2 + __p1_p3 ** 2) ** 0.5, 3)
+            round((__p1_p2 ** 2 + __p1_p3 ** 2) ** 0.5, 3) == __p2_p3,
+            round((__p1_p2 ** 2 + __p2_p3 ** 2) ** 0.5, 3) == __p1_p3,
+            round((__p2_p3 ** 2 + __p1_p3 ** 2) ** 0.5, 3) == __p1_p2
         ]):
             return "Right-angle triangle"
+        else:
+            return "Scalene Triangle"
+
+    def __repr__(self):
+        return f"Type= {self.type()} \nArea= {self.area()} \nperimeter= {self.perimeter()} \nsides{self.sides()}\n" \
+               f"centroid{self.centroid()} "
 
 
 p1 = (1, 5)
@@ -64,15 +72,14 @@ t1 = Triangle(p1, p2, p3)
 t2 = Triangle(p4, p5, p6)
 
 print("Triangle 1")
-print("area: ", t1.area())
-print("sides:", t1.sides())
-print("perimeter:", t1.perimeter())
-print("centroid:", t1.centroid())
+print(t1)
+
+# print("area: ", t1.area())
+# print("sides:", t1.sides())
+# print("perimeter:", t1.perimeter())
+# print("centroid:", t1.centroid())
+# print("type: ", t1.type())
 
 print()
 print("Triangle 2")
-print("area: ", t2.area())
-print("sides:", t2.sides())
-print("perimeter:", t2.perimeter())
-print("centroid:", t2.centroid())
-print(round((5 ** 2 + 6 ** 2) ** 0.5, 3))
+print(t2)
