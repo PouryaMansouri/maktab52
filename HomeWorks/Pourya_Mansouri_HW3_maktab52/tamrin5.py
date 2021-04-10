@@ -49,6 +49,8 @@ class Writer(User):
         self.genre = genre
 
 
+# TODO: How many author
+# TODO: check valid input for author
 class Asar:
     title: str
     authors: list
@@ -66,7 +68,7 @@ class Asar:
 
     def _set_author(self, authors):
         if not self.__is_valid_owner(authors):
-            raise Exception(f"In valid input  author(s) ")
+            raise Exception(f"Invalid input for author(s) ")
         if isinstance(authors, list):
             self.authors = authors
         else:
@@ -112,8 +114,6 @@ class Asar:
         return False
 
 
-# TODO: How many author
-# TODO: check valid input for author
 class Article(Asar):
     magazine: str
     year_of_publication: int
@@ -126,9 +126,7 @@ class Article(Asar):
 
     @property
     def count_authors(self):
-        if isinstance(self.authors, list):
-            return f"This article has {len(self.authors)} researchers"
-        return "This article has one researcher"
+        return f"This article has {len(self.authors)} researcher(s)"
 
 
 class Poem(Asar):
@@ -151,9 +149,7 @@ class Book(Asar):
 
     @property
     def count_authors(self):
-        if isinstance(self.authors, list):
-            return f"This article has {len(self.authors)} researchers"
-        return "This article has one researcher"
+        return f"This article has {len(self.authors)} writer(s)"
 
 
 u = User("Ali", sex='M')
@@ -168,4 +164,4 @@ print(a1)
 print(a2)
 print(a2.count_authors)
 # error for author
-p = Poem("sher no", r1)
+# p = Poem("sher no", r1)
