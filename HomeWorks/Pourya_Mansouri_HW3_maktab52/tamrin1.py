@@ -1,13 +1,16 @@
-'''
-   Triangle class
-'''
+"""
+   Tamrin 1: Triangle class
+"""
 
 
+# TODO: use private attr , property,  @A.setter  ...
+# TODO check input validation for set attr
 class Triangle:
     p1: tuple
     p2: tuple
     p3: tuple
 
+    # TODO: what should I do for shadow?!!
     def __init__(self, p1: tuple, p2: tuple, p3: tuple):
         self.p1 = p1
         self.p2 = p2

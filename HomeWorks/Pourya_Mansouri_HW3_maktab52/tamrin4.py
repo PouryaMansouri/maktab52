@@ -10,11 +10,15 @@ class Account:
         self.name = name
 
     def deposit(self, amount: int):
+        # amount should be more than 1 and int
+        assert amount > 1 and int(amount)
         self.__balance_account += amount
         return f"{self.name}: deposit complete and {amount}$ add to your account " \
                f"and new account balance is {self.__balance_account}"
 
-    def withdraw(self, amount):
+    def withdraw(self, amount: int):
+        # amount should be more than 1 and int
+        assert amount > 1 and int(amount)
         self.__check_balance(self.__balance_account - amount)
         self.__balance_account -= amount
         return f"{self.name}: withdraw complete and {amount}$ decrease from your account " \
@@ -52,3 +56,4 @@ print()
 print(ali)
 print()
 print(ali.transaction(pourya, 400))
+print(ali.transaction(pourya, 9000))

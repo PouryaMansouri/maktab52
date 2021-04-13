@@ -5,7 +5,7 @@
 class User:
     name: str
     email: str
-    sex: str
+    sex: str  # Gender 
 
     def __init__(self, name: str, email: str = None, sex: str = None):
         self.name = name.capitalize()
@@ -51,6 +51,7 @@ class Writer(User):
 
 # TODO: How many author
 # TODO: check valid input for author
+# TODO:
 class Asar:
     title: str
     authors: list
