@@ -50,6 +50,9 @@ objc = C()
 print(C.mro())
 objc.do_job(5)
 
+
+
+
 # print()
 # obje = E()
 # obje.do_job('Python', 5)
