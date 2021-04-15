@@ -52,9 +52,9 @@ class Square(Shape):
         while not all(map(lambda x: x <= 0, copy_list)):
             for _ in range(len(square_side_list)):
                 if copy_list[_] <= 0:
-                    print(' ' * square_side_list[_], end="")
+                    print('   ' * square_side_list[_], end=" ")
                 else:
-                    print('*' * square_side_list[_], end="")
+                    print(' * ' * square_side_list[_], end=" ")
             copy_list = list(map(lambda x: x - 1, copy_list))
             print()
 
@@ -109,6 +109,6 @@ print(rect2)
 
 print()
 rect_list = [rect2, rect1]
-print(Shape.concat_area(rect_list))
+print("concat_area: ",Shape.concat_area(rect_list))
 print()
 Square.draw_concat([2, 5, 3])
