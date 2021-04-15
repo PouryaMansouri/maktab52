@@ -1,0 +1,3 @@
+print('First line')
+a = 22
+print(654%a)
