@@ -43,6 +43,7 @@ class Square(Shape):
     def perimeter(self):
         return self.__x * 4
 
+    # TODO: How write comment for this function
     @staticmethod
     def draw_concat(square_side_list: list) -> None:
         for _ in square_side_list:
