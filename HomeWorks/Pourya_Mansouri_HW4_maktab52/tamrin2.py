@@ -109,6 +109,6 @@ print(rect2)
 
 print()
 rect_list = [rect2, rect1]
-print("concat_area: ",Shape.concat_area(rect_list))
+print("concat_area: ", Shape.concat_area(rect_list))
 print()
 Square.draw_concat([2, 5, 3])
