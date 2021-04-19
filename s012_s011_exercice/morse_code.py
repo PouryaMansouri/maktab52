@@ -1,3 +1,4 @@
+import logging
 from abc import ABC, abstractmethod
 
 MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
@@ -18,12 +19,24 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
 
 MORSE_CODE_DICT_REVERS = {value: key for (key, value) in MORSE_CODE_DICT.items()}
 
+logging.basicConfig(level=logging.INFO)  # TODO: why?
+logger = logging.getLogger("morse_logger")
+
+stream_handler = logging.StreamHandler()
+log_format = logging.Formatter("%(asctime)s — %(name)s — %(levelname)s —"
+                               " %(funcName)s:%(lineno)d — %(message)s")
+
+stream_handler.setLevel(logging.INFO)
+stream_handler.setFormatter(log_format)
+logger.addHandler(stream_handler)
+
 
 class Morse(ABC):
 
     def __init__(self, data: str) -> None:
         self._data = data
         assert self._check()
+        logger.info("create instance")
 
     @abstractmethod
     def process(self):
@@ -42,6 +55,8 @@ class Morse(ABC):
     def save_file(self, filename):
         with open(filename, 'w') as f:
             f.write(self.process())
+
+        logger.info(f"save file in {filename=}")
         return filename
 
     @classmethod
@@ -53,6 +68,8 @@ class Morse(ABC):
         """
         with open(file_path) as f:
             data = f.read()
+
+        logger.info(f"create instance from {file_path=}")
         return cls(data)  # create instance
 
     def __repr__(self):
@@ -68,7 +85,12 @@ class MorseEncoder(Morse):
         return res
 
     def _check(self) -> bool:
-        return all(map(lambda _: _ in list(MORSE_CODE_DICT.keys()),list(self._data.upper())))
+        if all(map(lambda _: _ in list(MORSE_CODE_DICT.keys()), list(self._data.upper()))):
+            logger.info("The data is valid")
+            return True
+        else:
+            logger.error("Invalid data for Encode -- check your data again")
+            return False
 
 
 class MorseDecoder(Morse):
@@ -82,7 +104,12 @@ class MorseDecoder(Morse):
         return res
 
     def _check(self) -> bool:
-        return all(map(lambda _: _ in list(MORSE_CODE_DICT_REVERS.keys()), self._data.split()))
+        if all(map(lambda _: _ in list(MORSE_CODE_DICT_REVERS.keys()), self._data.split())):
+            logger.info("The data is valid")
+            return True
+        else:
+            logger.error("Invalid data for Decode -- check your data again")
+            return False
 
 
 encode = MorseEncoder("salam Chetori Akbar? in yek file test hast.")
