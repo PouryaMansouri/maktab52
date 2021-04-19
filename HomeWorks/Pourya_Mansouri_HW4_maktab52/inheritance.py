@@ -12,6 +12,8 @@ class A(Object):
 
 class Z(Object):
     def do_job(self, s=None, n=None):
+        if isinstance(self,F):
+            super().do_job()
         return super().do_job(s=s, n=n) + "\n" + f'I am counting from 1 to {n}:  {list(range(1, n + 1))}'
         #
         # print(f'I am counting from 1 to {n}:  {list(range(1, n + 1))}')
@@ -69,10 +71,10 @@ print(objz.do_job(n=3))
 
 print()
 obje = E()
-# print(E.mro())
+print(E.mro())
 print(obje.do_job(s='Python', n=5))
 
 print()
 objf = F()
-# print(F.mro())
+print(F.mro())
 print(objf.do_job(s='Python', n=6))
