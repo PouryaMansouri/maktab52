@@ -6,4 +6,4 @@ Python 3.0 was released on 3 December 2008. It was a major revision of the langu
 
 Python 2.7's end-of-life date was initially set at 2015 then postponed to 2020 out of concern that a large body of existing code could not easily be forward-ported to Python 3.[52][53] No more security patches or other improvements will be released for it.[54][55] With Python 2's end-of-life, only Python 3.6.x[56] and later are supported.
 
-Python 3.9.2 and 3.8.8 were expedited[57] as all versions of Python (including 2.7[58]) had security issues, leading to possible remote code execution[59] and web cache poisoning.[60
+Python 3.9.2 and 3.8.8 were expedited[57] as all versions of Python (including 2.7[58]) had security issues, leading to possible remote code execution[59] and web cache poisoning.[60]
