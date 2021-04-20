@@ -36,6 +36,7 @@ class E(D, C):
         print('I am laughing ...')
 
 
+# TODO: how use **kwarg
 class F(Z, B):
     def do_job(self, s=None, n=None):
         super().do_job(s=s, n=n)
