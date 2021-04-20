@@ -15,8 +15,10 @@ with open(output_path, 'w') as f:
         # TODO: remove all reference --> Done
         matcher_reference = re.compile(r"\[\d*\]")
         _ = matcher_reference.sub(' ', _)
+        # TODO: split sentence
         matcher_line = re.compile(r"\.\s")
         lines = matcher_line.split(_)
+        # TODO: write to file
         for line in lines:
             if line != '':
                 f.write(line.strip() + '.\n')
