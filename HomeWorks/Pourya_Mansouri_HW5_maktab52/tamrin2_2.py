@@ -33,3 +33,8 @@ with open(output_path, 'w') as out_file:
     out_file.write("All numbers:\n")
     out_file.write(str(numbers) + "\n\n")
     out_file.write(f"There are {unique_words=} and {numbers=} in this file")
+
+output_path = "./output-q-2-3.txt"
+capital_words = [_ for _ in words if _[0].isupper()]
+with open(output_path, 'w') as out_file:
+    out_file.write(', '.join(capital_words))
