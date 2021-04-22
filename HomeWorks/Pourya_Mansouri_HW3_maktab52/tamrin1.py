@@ -40,9 +40,6 @@ class Triangle:
                                                                            3)
 
     def type(self):
-        # __p1_p2 = Triangle.distance_between_two_point(self.p1, self.p2)
-        # __p1_p3 = Triangle.distance_between_two_point(self.p1, self.p3)
-        # __p2_p3 = Triangle.distance_between_two_point(self.p2, self.p3)
         __p1_p2, __p1_p3, __p2_p3 = self.sides()
 
         if all([__p2_p3 == __p1_p2, __p1_p3 == __p2_p3, __p1_p3 == __p1_p2]):

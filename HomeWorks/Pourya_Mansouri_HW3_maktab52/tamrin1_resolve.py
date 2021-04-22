@@ -3,7 +3,7 @@
 """
 
 
-# TODO: use private attr , property,  @A.setter  ... Done
+# TODO: use private attr , property,  @A.setter  --> Done
 # TODO check input validation for set attr --> Done
 class Triangle:
     p1: tuple
@@ -119,11 +119,6 @@ t2 = Triangle(p4, p5, p6)
 print("Triangle 1")
 print(t1)
 
-# print("area: ", t1.area())
-# print("sides:", t1.sides())
-# print("perimeter:", t1.perimeter())
-# print("centroid:", t1.centroid())
-# print("type: ", t1.type())
 
 print()
 print("Triangle 2")
