@@ -3,7 +3,7 @@
 """
 
 
-# TODO: use private attr , property,  @A.setter  ... Done
+# TODO: use private attr , property,  @A.setter  --> Done
 # TODO check input validation for set attr --> Done
 class Triangle:
     p1: tuple
@@ -54,12 +54,12 @@ class Triangle:
                            self.__p1[1] - self.__p2[1])))
 
     @staticmethod
-    def distance_between_two_point(point1: tuple, point2: tuple):
+    def distance_between_two_point(point1: tuple, point2: tuple) -> float:
         """
-        calculate the distance between to point
-        the function is static because it is tools
-        :param point1:
-        :param point2:
+        calculate the distance between to point \n
+        the function is static because it is tools \n
+        :param point1: tuple
+        :param point2: tuple
         :return: float
         """
         return round(((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2) ** 0.5, 3)
@@ -118,12 +118,6 @@ t2 = Triangle(p4, p5, p6)
 
 print("Triangle 1")
 print(t1)
-
-# print("area: ", t1.area())
-# print("sides:", t1.sides())
-# print("perimeter:", t1.perimeter())
-# print("centroid:", t1.centroid())
-# print("type: ", t1.type())
 
 print()
 print("Triangle 2")

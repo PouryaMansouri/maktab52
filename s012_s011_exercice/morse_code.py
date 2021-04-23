@@ -19,12 +19,12 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
 
 MORSE_CODE_DICT_REVERS = {value: key for (key, value) in MORSE_CODE_DICT.items()}
 
-logging.basicConfig(level=logging.INFO)  # TODO: why?
 logger = logging.getLogger("morse_logger")
 
 stream_handler = logging.StreamHandler()
 log_format = logging.Formatter("%(asctime)s — %(name)s — %(levelname)s —"
                                " %(funcName)s:%(lineno)d — %(message)s")
+logger.setLevel(logging.INFO)
 
 stream_handler.setLevel(logging.INFO)
 stream_handler.setFormatter(log_format)
