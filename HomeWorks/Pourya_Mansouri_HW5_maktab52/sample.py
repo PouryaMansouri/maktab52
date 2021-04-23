@@ -1,16 +1,35 @@
-from person import Person
 import logging
 
+from person import Person
+
 # logging.basicConfig(level=logging.INFO)
-logging.basicConfig(level=logging.DEBUG)
+logger_sub = logging.getLogger("sub")
+
+file_handler = logging.FileHandler("sample.log", 'a', encoding='utf-8')
+stream_handler = logging.StreamHandler()
+
+log_format = logging.Formatter("%(asctime)s —%(name)-10s: — %(levelname)-16s — "
+                               "%(msecs)s — %(message)s")
+log_format_stream = logging.Formatter("%(asctime)s — %(levelname)-16s — %(message)s")
+
+# stream_handler.setLevel(logging.DEBUG)
+stream_handler.setFormatter(log_format_stream)
+
+# file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(log_format)
+logger_sub.setLevel(logging.INFO)
+logger_sub.addHandler(file_handler)
+logger_sub.addHandler(stream_handler)
 
 
 def sub(a, b):
     if b != 0:
-        logging.info("a/b=" + str(a / b))
+        # logging.debug("a/b=" + str(a / b))
+        logger_sub.debug("a/b=" + str(a / b))
         return a / b
         # logging.debug("a/b=" + str(a / b)) #  this line never call
-    logging.info("Divide by zero!")
+    logger_sub.info("Divide by zero!")
+    # logging.info("Divide by zero!")
 
 
 print(sub(2, 3))
