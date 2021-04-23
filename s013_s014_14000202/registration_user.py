@@ -85,6 +85,9 @@ def register_user(name, password, phone, email):
     return User(id=count, name=name, phone=phone, password=password, email=email)
 
 
+list_users = []
+
+
 def main():
     print("USER MANAGER PROGRAM")
     print("\t 1. Register")
@@ -106,10 +109,11 @@ def main():
         else:
             logging.info("Registered Successfully!")
             # print("Registered Successfully!")
-            with open('users.info', 'ab') as f:
+            with open('users.info', 'wb') as f:
                 # pickled = pickle.dumps(new_user)
                 # f.write(str(new_user) + "\n")
-                pickle.dump(new_user, f)
+                list_users.append(new_user)
+                pickle.dump(list_users, f)
                 f.write(b'\n')
 
             logging.info("new user add to file")
@@ -128,4 +132,3 @@ def main():
 
 
 main()
-
