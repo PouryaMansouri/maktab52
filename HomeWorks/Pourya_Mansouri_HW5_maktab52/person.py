@@ -7,6 +7,13 @@ file_handler = logging.FileHandler("person.log", 'a', encoding='utf-8')
 log_format = logging.Formatter("%(asctime)s — %(name)-10s — %(levelname)-16s — "
                                "%(message)s")
 file_handler.setFormatter(log_format)
+
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.ERROR)
+log_format_stream = logging.Formatter("%(asctime)s — %(levelname)s — %(message)s")
+stream_handler.setFormatter(log_format_stream)
+
+logger_person.addHandler(stream_handler)
 logger_person.addHandler(file_handler)
 
 
