@@ -8,4 +8,5 @@ class Peugeot(Car):
         return self.__class__.__name__
 
 
-print('Hello from models.py module')
+if __name__ == '__main__':
+    print('Hello from models.py module')

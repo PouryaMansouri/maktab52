@@ -1,4 +1,5 @@
 from .models import Car, Peugeot
+# from models import Car, Peugeot
 
 
 class CarView:
@@ -15,6 +16,5 @@ class PeugeotView:
         print(self.model())
 
 
-
-
-print('Hello from views.py module')
+if __name__ == '__main__':
+    print('Hello from views.py module')
