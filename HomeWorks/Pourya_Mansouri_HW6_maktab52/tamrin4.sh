@@ -2,11 +2,13 @@
 
 read -p "What is yout=r file's name? " file_name
 
-echo "start searching"
+echo -e  "start searching:\n"
+flag=true
 for file in $(ls|sort);do
 
 	if [ $file_name ==  $file  ]
 	then
+		flag=false
 		echo -e  "name match:\n"
 		if [ -f $file ]
 		then
@@ -18,7 +20,11 @@ for file in $(ls|sort);do
 		then
 			echo "It isn't a file"
 		fi
+		echo
 	fi
-	echo
 done
+if $flag
+then
+	echo -e "File dose not exist\n"
+fi
 
