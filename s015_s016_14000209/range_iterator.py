@@ -35,8 +35,8 @@ class range:
             self.start = 0
         elif self.step > 0:
             self.i = self.start
-        else:
-            self.end, self.start = self.start, self.end
+        elif self.step < 0:
+            self.i = self.start
 
     def __iter__(self):
 
@@ -50,9 +50,9 @@ class range:
                 return i
             raise StopIteration("Finish")
         elif self.step < 0:
-            if self.start <= self.i < self.end:
+            if self.end < self.i <= self.start:
                 i = self.i
-                self.i -= self.step
+                self.i += self.step
                 return i
             raise StopIteration("Finish")
         else:
@@ -84,7 +84,7 @@ print("test5")
 print(tester(10, 20))
 print("test6")
 print(tester(10, 1, -1))
-# print("test7")
-# print(tester(10, 1, -2))
-# print("test8")
-# print(tester(10, 20, 2))
+print("test7")
+print(tester(10, 1, -2))
+print("test8")
+print(tester(10, 20, 2))
