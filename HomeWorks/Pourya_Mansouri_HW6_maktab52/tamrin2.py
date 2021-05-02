@@ -1,3 +1,6 @@
+import re
+
+
 class MatException(Exception):
     def __init__(self, msg: str, data: str):
         self.msg = msg
@@ -16,20 +19,25 @@ class Calculation:
 
     @phrase.setter
     def phrase(self, phrase):
-
+        # TODO: check its just number
+        pattern = re.compile(r"^^\d*[-+*%/]+\d$")
+        if not pattern.match(phrase):
+            raise MatException("invalid input to calculate",phrase)
         self.__phrase = phrase
 
-    def calculation(input: str) -> None:
-        try:
-            out = eval(input)
-        except:
-            print("invalid input to calculate")
-        else:
-            print(out)
+    def calculation(self) -> None:
+
+        return eval(self.__phrase)
+
 
 
 in1 = '3+4'
-in2 = '6*4+'
+in2 = '6*4-'
 
+print("Correct Test")
 c = Calculation(in1)
-c.ph = in2
+print(c.calculation())
+
+print("Wrong Test")
+c.phrase = in2
+print(c.calculation())
