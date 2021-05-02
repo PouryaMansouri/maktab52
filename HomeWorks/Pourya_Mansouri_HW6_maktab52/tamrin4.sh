@@ -18,7 +18,7 @@ for file in $(ls|sort);do
 		fi
 		if [ -d $file ] 
 		then
-			echo "It isn't a file"
+			echo "It isn't a file, it's directory"
 		fi
 		echo
 	fi
