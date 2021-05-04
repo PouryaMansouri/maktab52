@@ -18,7 +18,7 @@ with open(input_path) as input_file:
     without_digit = matcher_digit.sub('', without_dot)
     words = without_digit.split()
 
-# TODO: 1980s is a word or numbers?
+
 all_words_dict = dict()
 for _ in words:
     all_words_dict[_] = all_words_dict.get(_, 0) + 1

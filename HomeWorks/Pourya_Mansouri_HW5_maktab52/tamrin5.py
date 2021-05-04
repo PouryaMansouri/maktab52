@@ -29,15 +29,16 @@ with open(file_out1, 'w') as f:
     for _ in sorted_by_id:
         f.write(str(_) + '\n')
 
-sorted_by_phone = sorted(unpickle, key=lambda x: x.phone)
+# sorted_by_phone = sorted(unpickle, key=lambda x: x.phone)
 with open(file_out2, 'w') as f:
-    result = list(filter(lambda user: str(user.phone).startswith('0919'), sorted_by_phone))
+    # result = list(filter(lambda user: str(user.phone).startswith('0919'), sorted_by_phone))
+    result = list(filter(lambda user: str(user.phone).startswith('0919'), sorted_by_id))
     for _ in result:
         f.write(str(_) + "\n")
-
-list_user = dict()
-for _ in unpickle:
-    list_user[_.fullname()] = _
+#
+# list_user = dict()
+# for _ in unpickle:
+#     list_user[_.fullname()] = _
 
 with open(file_out3, 'wb') as f:
-    dill.dump(list_user, f)
+    dill.dump(unpickle, f)

@@ -17,7 +17,7 @@ logger_person.addHandler(stream_handler)
 logger_person.addHandler(file_handler)
 
 
-class Person():
+class Person:
     def __init__(self, name, family, age):
         self.name = name
         self.family = family
