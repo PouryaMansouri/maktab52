@@ -1,4 +1,4 @@
-from .models import Car, Peugeot
+from sample_pkg.models import Car, Peugeot
 # from models import Car, Peugeot
 
 

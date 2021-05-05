@@ -9,7 +9,7 @@ def file_size_in_folder(file_path):
     file_list = []
     for _ in items_list:
         if os.path.isfile(_):
-            if len(file_extension.findall(_)[0][1:]) >= 5:
+            if len(file_extension.findall(_)[0][1:]) >= 2:
                 files_size += os.path.getsize(_)
                 file_list.append(_)
     return files_size, file_list
