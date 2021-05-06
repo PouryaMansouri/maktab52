@@ -1,18 +1,21 @@
-import logging
-
-logging.basicConfig(level=logging.INFO,
-                    format="%(asctime)s —%(name)s: — %(levelname)s"
-                           " - %(msecs)s —  %(message)s")
+# import logging
+import timeit
 
 
-def process_timer(func):
-    def inner_function(*args, **kwargs):
-        logging.info(f"Function start - function:{func.__name__}")
-        res = func(*args, **kwargs)
-        logging.info(f"Function finish - function:{func.__name__}")
-        return res
-
-    return inner_function
+#
+# logging.basicConfig(level=logging.INFO,
+#                     format="%(asctime)s —%(name)s: — %(levelname)s"
+#                            " - %(msecs)s —  %(message)s")
+#
+#
+# def process_timer(func):
+#     def inner_function(*args, **kwargs):
+#         logging.info(f"Function start - function:{func.__name__}")
+#         res = func(*args, **kwargs)
+#         logging.info(f"Function finish - function:{func.__name__}")
+#         return res
+#
+#     return inner_function
 
 
 def hsg(n):
@@ -43,21 +46,72 @@ class his:
         raise StopIteration("Finish")
 
 
-@process_timer
+# @process_timer
 def hailstone_g(n):
+    num = [str(n)]
     for _ in hsg(n):
-        print(_, end=',')
-    print()
+        num.append(str(_))
+    return num
 
 
-hailstone_g(10 ** 300)
+#
+nums = hailstone_g(100000)
+print(", ".join(nums))
 
 
-@process_timer
+# @process_timer
 def hailstone_iter(n):
+    num = [str(n)]
     for _ in iter(his(n)):
-        print(_, end=',')
-    print()
+        num.append(str(_))
+    return num
 
 
-hailstone_iter(10 ** 300)
+#
+nums2 = hailstone_iter(100000)
+print(", ".join(nums2))
+
+
+def hailstone_g_time():
+    SETUP_CODE = '''
+from __main__ import hailstone_g
+'''
+
+    TEST_CODE = '''
+nums = hailstone_g(100000)
+    '''
+    # timeit.repeat statement
+    times = timeit.timeit(setup=SETUP_CODE,
+                          stmt=TEST_CODE,
+                          number=10000
+                          )
+
+    # printing minimum exec. time
+    # print('hailstone_g time: {}'.format(min(times)))
+    print('hailstone_g time: {}'.format(times))
+
+
+def hailstone_iter_time():
+    SETUP_CODE = '''
+from __main__ import hailstone_iter
+'''
+
+    TEST_CODE = '''
+nums = hailstone_iter(100000)
+    '''
+    # timeit.repeat statement
+    times = timeit.timeit(setup=SETUP_CODE,
+                          stmt=TEST_CODE,
+                          number=10000
+                          )
+
+    # printing minimum exec. time
+    # print('hailstone_iter time: {}'.format(min(times)))
+    print('hailstone_iter time: {}'.format(times))
+
+
+if __name__ == "__main__":
+    nums2 = hailstone_iter(100000)
+    print(", ".join(nums2))
+    hailstone_g_time()
+    hailstone_iter_time()
