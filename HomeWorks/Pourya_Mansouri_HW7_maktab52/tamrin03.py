@@ -32,10 +32,11 @@ with BackupOpen(path, 'r') as f:
     print(f.read())
 
 path2 = 'test2.txt'
-count = 1
-with BackupOpen(path2, 'r') as file_read:
-    with BackupOpen(path, 'w') as file_write:
-        for _ in file_read.readlines():
-            count += 1
+count = 0
+with BackupOpen(path2, 'r') as file_for_read:
+    with BackupOpen(path, 'w') as file_for_write:
+        for _ in file_for_read.readlines():
             assert count < 5, "raise error"
-            file_write.write(_)
+            file_for_write.write(_)
+            count += 1
+
