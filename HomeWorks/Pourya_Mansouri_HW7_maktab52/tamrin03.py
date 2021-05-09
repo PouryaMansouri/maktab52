@@ -21,22 +21,25 @@ class BackupOpen():
             self.open_file.close()
             with open(self.file, 'w') as f:
                 f.write(self.__backup_file)
-            print(f">>> Error: {exc_type=} : {exc_val=}")
+            print(f">>> Error: {exc_type=} : {exc_val=} : {self.file}")
         else:
             self.open_file.close()
 
 
 path = 'test.txt'
-
+print("First file:")
 with BackupOpen(path, 'r') as f:
     print(f.read())
 
+print("*****************************")
+
 path2 = 'test2.txt'
 count = 0
+print("write second file on first file with error:")
 with BackupOpen(path2, 'r') as file_for_read:
     with BackupOpen(path, 'w') as file_for_write:
         for _ in file_for_read.readlines():
+            print(_, end='')
             assert count < 5, "raise error"
             file_for_write.write(_)
             count += 1
-

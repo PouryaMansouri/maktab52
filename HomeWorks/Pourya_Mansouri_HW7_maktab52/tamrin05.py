@@ -54,9 +54,6 @@ def hailstone_g(n):
     return num
 
 
-#
-nums = hailstone_g(100000)
-print(", ".join(nums))
 
 
 # @process_timer
@@ -67,9 +64,6 @@ def hailstone_iter(n):
     return num
 
 
-#
-nums2 = hailstone_iter(100000)
-print(", ".join(nums2))
 
 
 def hailstone_g_time():
@@ -111,7 +105,10 @@ nums = hailstone_iter(100000)
 
 
 if __name__ == "__main__":
-    nums2 = hailstone_iter(100000)
+    nums = hailstone_iter(100000)
+    print(", ".join(nums))
+    print("-------------")
+    nums2 = hailstone_g(100000)
     print(", ".join(nums2))
     hailstone_g_time()
     hailstone_iter_time()

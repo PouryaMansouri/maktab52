@@ -29,6 +29,7 @@ with Indenter() as indent:
         indent.print('talk is cheap')
         with indent:
             indent.print('show me the code ')
+        indent.print('show me the code ')
     indent.print('Torvalds')
 
 # output is :

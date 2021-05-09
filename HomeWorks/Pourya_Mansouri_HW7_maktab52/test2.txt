@@ -1,9 +1,9 @@
-1
-12
-121
+1. khate 1
+2. khate 2
+3. khate 4
 21
 salam dobare
-in file baraye az no neveshtan roye
+in file baraye az no neveshtan roye file ghable bod ke be rror mikhore alan
 file test hast
 ke ba khata mobaje mishe
 1
