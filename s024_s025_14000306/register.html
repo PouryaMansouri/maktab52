@@ -8,43 +8,53 @@
     <title>register</title>
 </head>
 
-<body>
+<body style="background-color: turquoise;">
     <header>
         <h1>Register</h1>
     </header>
-    <nav>
-        <a href="www.google.com">google</a><br>
-        <a href="./profile.html">profile</a>
+    <nav style="padding: 10px;border: 4px solid pink ;width: 500px;">
+        <a href=" www.google.com ">google</a><br>
+        <a href="./profile.html ">profile</a><br>
+        <a href="https://www.pouryamansouri.com">Website</a>
     </nav>
+    <div style="background-color: teal; border: 4px solid red; width: 500px; height: 500px; padding: 10px; align-self: center; ">
+        <form action=" " method="POST " style="text-align: left; align-self: center;">
+            <label for="fname ">First name</label>
+            <input type="text " name="fname " id="fname " style="align-self: center;"><br>
+            <label for="lname ">Last name</label>
+            <input type="text " name="lname " id="lname "><br>
+            <label for="email ">Email</label>
+            <input type="email " name="email " id="email " required>
+            <br>
+            <label for="pass ">Password</label>
+            <input type="password " minlength="8 "><br>
+            <label for="bday ">Birthday</label>
+            <input type="date " name="bday " id="bday ">
+            <br>
+            <!-- <label for="gender ">Gender</label><br>
+            <input type="radio" name="gender">
+            <label for=" ">Male</label> <br>
+            <input type="radio" name="gender">
+            <label for="">Female</label><br>
+            <input type="radio" name="gender"> -->
+            <!-- <label for=" ">Others</label><br> -->
+            <select name="gender">
+               <option value="Male">Male</option>
+               <option value="Female">Female</option>
+               <option value="Others">Others</option>
+            </select>
+            <label for="">Address</label>
+            <br>
+            <textarea rows="4" cols="50" style="text-align: left;">
+                Enter your address  here...</textarea>
+
+            <!-- <input type="submit " value="Register " style="bottom: 1px;">
+            <input type="reset "> -->
+        </form>
+    </div>
     <footer>
         <p>Website create by Pourya Mansouri</p>
     </footer>
-    <!-- <div>
-        <form action="" method="POST">
-            <label for="fname">First name</label>
-            <input type="text" name="fname" id="fname"><br>
-            <label for="lname">Last name</label>
-            <input type="text" name="lname" id="lname"><br>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
-            <br>
-            <label for="pass">Password</label>
-            <input type="password" minlength="8"><br>
-            <label for="bday">Birthday</label>
-            <input type="date" name="bday" id="bday">
-            <br>
-            <label for="gender">Gender</label><br>
-            <input type="radio" name="gender" value="Male">
-            <label for="">Male</label>
-            <br>
-            <input type="radio" name="gender" value="Female">
-            <label for="">Female</label><br>
-            <input type="radio" name="gender" value="Others">
-            <label for="">Others</label><br>
-            <input type="submit" value="Register">
-            <input type="reset">
-        </form>
-    </div> -->
 </body>
 
 </html>
