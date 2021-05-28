@@ -70,3 +70,39 @@
 -- insert into person (role_id, national_code, birth_date, first_name, last_name, password, mobile) values (1,1080055524,'1991-03-12','Pourya','Mansouri','1213456','09123456789')
 -- select first_name from person where id=1
 -- select * from person where password like '%1234%'
+
+
+-- insert into person (role_id, national_code, birth_date, first_name, last_name, password, mobile) values (1,1080055524,'1991-03-12','Pourya','Mansouri','1213456','09123456789')
+-- select first_name from person where id=1
+-- select * from person where password like '%1234%'
+-- select length(password),count(*) from  person
+-- group by length(password)
+-- select role_id,count(*) from person
+-- group by role_id
+
+-- select * from test
+-- inner join test_answer_list tal on test.id = tal.test_id
+-- select name,price from test
+-- inner join test_price tp on test.id = tp.test_id
+
+-- select * from test_answer_list;
+-- join test_answer ta on ta.id = test_answer_list.test_answer_id
+-- where answer is null
+-- select * from test_answer_list
+-- join test_answer ta on ta.id = test_answer_list.test_answer_id
+-- where answer is null
+
+-- select name,sum(price)   from test
+-- inner join test_answer_list on test.id = test_answer_list.test_id
+-- group by name
+
+-- select first_name,count(t.name) from test_answer
+-- inner join person p on p.id = test_answer.person_id
+-- inner join test_answer_list tal on test_answer.id = tal.test_answer_id
+-- inner join test t on t.id = tal.test_id
+-- group by first_name
+
+select first_name,sum(test_answer_list.price)as hazine from test_answer
+inner join person p on p.id = test_answer.person_id
+inner join test_answer_list  on test_answer.id = test_answer_list.test_answer_id
+group by first_name
