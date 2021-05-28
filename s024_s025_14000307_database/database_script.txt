@@ -1,0 +1,72 @@
+-- create database lab ;
+-- create schema pourya;
+-- select database lab;
+-- create table person(
+--     id serial primary key ,
+--     national_code  char(16) not null unique ,
+--     birth_day date not null ,
+--     first_name char(100)  not null ,
+--     last_name char(100) not null ,
+--     phone char(11) null
+-- );
+-- create table test(
+--     id serial primary key unique ,
+--     name char(100) not null ,
+--     description char(500) null
+-- )
+-- create table test_price(
+--     id serial primary key ,
+--     test_id int not null ,
+--     price int not null ,
+--     start_date date not null ,
+--     end_date date not null
+-- )
+-- drop table person;
+-- create table person(
+--     id serial primary key ,
+--     role_id int not null ,
+--     national_code  char(16) not null unique ,
+--     birth_day date not null ,
+--     first_name char(100)  not null ,
+--     last_name char(100) not null ,
+--     phone char(11) null,
+--     password char(20) not null
+-- );
+
+-- create table test_answer(
+--     id serial primary key ,
+--     person_id int not null ,
+--     request_date date not null ,
+--     answer_date date not null
+-- );
+-- create table test_answer_list(
+--   id serial primary key ,
+--   test_id int not null ,
+--   price int not null ,
+--   answer char(100) not null
+-- );
+-- create table roll(
+--   id serial primary key ,
+--   name char(10) not null
+-- );
+-- create table test_answer(
+--     id serial primary key ,
+--     person_id int not null ,
+--     request_date date not null ,
+--     answer_date date not null
+-- );
+-- create table test_answer_list(
+--   id serial primary key ,
+--   test_id int not null ,
+--   price int not null ,
+--   answer char(100) not null
+-- );
+-- insert into roll (name) values ('admin');
+-- insert into roll (name) values ('person');
+-- -- insert into roll (name) values ('doctor');
+-- insert into roll (name) values ('u');
+-- update roll set name='doctor' where id=3;
+-- delete from roll where id=4;
+-- insert into person (role_id, national_code, birth_date, first_name, last_name, password, mobile) values (1,1080055524,'1991-03-12','Pourya','Mansouri','1213456','09123456789')
+-- select first_name from person where id=1
+-- select * from person where password like '%1234%'
