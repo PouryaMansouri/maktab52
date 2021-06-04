@@ -1,0 +1,145 @@
+@font-face {
+    font-family: my_iransans;
+    src: url('../fonts/IRANSans(FaNum).ttf');
+}
+
+@font-face {
+    font-family: my_yekan_bakh;
+    src: url('../fonts/YekanRegular.ttf');
+}
+
+body {
+    direction: rtl;
+    font-family: my_iransans, serif !important;
+}
+
+:root {
+    --color-primary: #008496;
+    --color-primary-dark: #005d69;
+    --color-primary-light: #1dc2d7;
+    --color-primary-blue: #0d6efd;
+    --color-accent: #3e3e3e;
+    --color-disable: gray;
+    --color-gray: #797979;
+    --color-border: #00000030;
+    --radius-heavy: 20px;
+    --radius-primary: 10px;
+    --radius-light: 7px;
+}
+
+body {
+    min-height: 100vh;
+}
+
+* {
+    outline: none;
+}
+
+input:not([type=submit]),
+select,
+textarea {
+    width: 100%;
+    padding: 0.3rem 0.4rem;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-light);
+}
+
+input:not([type=submit]):focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-primary-light);
+}
+
+p {
+    color: var(--color-accent);
+    text-align: center;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled,
+button:disabled {
+    background-color: #d2d2d2;
+    border-color: var(--color-disable);
+    color: var(--color-disable);
+}
+
+input[type=date] {
+    direction: ltr !important;
+}
+
+button,
+input[type=submit] {
+    border-radius: 20px;
+    background: linear-gradient(45deg, var(--color-primary-light), var(--color-primary-blue));
+    color: white;
+    border: none;
+    box-shadow: 0 1px 5px var(--color-primary-blue);
+    cursor: pointer;
+    padding: 0.4rem 2rem;
+}
+
+button:hover,
+input[type=submit]:hover {
+    background: var(--color-primary-light);
+    box-shadow: 0 3px 9px var(--color-accent);
+}
+
+button:focus,
+input[type=submit]:focus {
+    color: #ffffffb0;
+    background: var(--color-primary-blue);
+    box-shadow: none;
+}
+
+select {
+    /*padding: 0.3rem 0.5rem !important;*/
+    vertical-align: middle;
+    appearance: none;
+    outline: none;
+    color: var(--color-accent);
+    background: transparent url('../images/arrow-bold-down-primary-50px.png') no-repeat left 0.5rem center/9px 9px;
+    backdrop-filter: saturate(2);
+    font-size: 0.91rem;
+}
+
+select:focus {
+    background-image: url('../images/arrow-bold-down-primary-light-50px.png');
+}
+
+option.default {
+    color: gray;
+}
+
+.doc-input {
+    background: white url("../images/add-primary-100px.png") no-repeat center/40px 40px;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-light);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.doc-input:hover,
+.doc-input:focus-within,
+.doc-input:focus {
+    background-image: url("../images/add-primary-light-100px.png");
+    border-color: var(--color-primary-light);
+}
+
+.doc-input>input[type=file]::-webkit-file-upload-button {
+    /*min-height: 150px !important;*/
+    width: 0;
+    visibility: hidden;
+}
+
+.doc-input input::before {
+    content: '';
+    display: inline-block;
+    white-space: nowrap;
+    -webkit-user-select: none;
+}
+
+.doc-input>input[type=file] {
+    height: 100px !important;
+    border: none;
+}

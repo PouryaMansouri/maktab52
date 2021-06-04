@@ -1,0 +1,11 @@
+#example1 {
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+#example2 {
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 50px 20px;
+}
