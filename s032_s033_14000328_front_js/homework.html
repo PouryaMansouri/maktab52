@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="homework.css">
+    <script src="homework.js"></script>
+</head>
+<body>
+<div style="text-align: center;height: 100% ; width: 100%">
+    <div>
+        <label for="size_m">image size</label>
+        <input id="size_m" name="img" type="range" value="20" min="10" max="80" oninput="change_image_size(this.value)">
+        <br>
+        <label>default</label>
+        <input id="filter1" name="filter" type="radio" onclick="document.getElementById('img').style.filter='' ">
+        <label>filter2</label>
+        <input id="filter2" name="filter" type="radio" onclick="document.getElementById('img').style.filter='blur(5px)' ">
+        <label>filter3</label>
+        <input id="filter3" name="filter" type="radio" onclick="document.getElementById('img').style.filter='drop-shadow(8px 8px 8px gray)' ">
+        <label>filter4</label>
+        <input id="filter4" name="filter" type="radio"
+               onclick="document.getElementById('img').style.filter='hue-rotate(180deg) ' ">
+        <br>
+        <img id="img" src="apple.jpeg" style="height: 20% ; width: auto">
+
+    </div>
+</div>
+</body>
+</html>
