@@ -1,0 +1,9 @@
+select first_name,last_name,COALESCE(password,'-'),
+       case
+when length(password)< 4 then 'week'
+when length(password) between 4 and 8 then 'normal'
+else 'good'
+end as pass_strong
+from person;
+
+from person;
