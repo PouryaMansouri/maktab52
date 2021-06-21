@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user_info</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        main {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div style="width: 20%">
+        <table>
+            <tr>
+                <th>
+                    users:
+                </th>
+            </tr>
+            {% for u in content['users'] %}
+                <tr>
+                    <td><a href="/users/{{ u['id'] }}" >{{ u['firstname'] }}</a></td>
+{#                    <td><a href="/users/?id={{ u['id'] }}" >{{ u['firstname'] }}</a></td>#}
+                </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+    <div style="width: 70%">
+        {% if content['user'] %}
+            <pre>
+            first_name : {{ content['user']['firstname'] }}
+            id: {{ content['user']['id'] }}
+            username: {{ content['user']['username'] }}
+            firstname: {{ content['user']['firstname'] }}
+            lastname: {{ content['user']['lastname'] }}
+            phone: {{ content['user']['phone'] }}
+            code: {{ content['user']['code'] }}
+            </pre>
+        {% endif %}
+    </div>
+</main>
+</body>
+</html>
