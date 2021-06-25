@@ -46,9 +46,10 @@
     }
 
     $(document).ready(function () {
-        $('#number').onclick(function () {
-            let number = $(this).val()
-            multi(number)
+
+        $('#number').on('input', function () {
+            $("#table").empty()
+            multi($(this).val())
         })
     })
 

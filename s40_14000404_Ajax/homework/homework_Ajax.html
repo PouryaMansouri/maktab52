@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        main {
+            display: flex;
+        }
+    </style>
+
+</head>
+<body>
+<main>
+    <div style="width: 20%">
+        <table id="table_user">
+            <tr>
+                <th>
+                    users:
+                </th>
+            </tr>
+
+        </table>
+    </div>
+    <div id="user_info" style="width: 70%;margin-left: 10%">
+
+    </div>
+</main>
+
+<script>
+    $.getJSON("http://ma-web.ir/maktab52/users.json", function (data) {
+        var table = $("#table_user")
+        for (u of data) {
+            let row = $("<tr></tr>").appendTo(table)
+            row.append(`<td>${u.firstname}</td>`)
+            row.hover(function () {
+                $(this).css("background-color", "yellow");
+            }, function () {
+                $(this).css("background-color", "pink");
+            });
+            row.attr('onclick', `user_info(${JSON.stringify(data)},${u.id})`);
+            table.append(row)
+
+        }
+    })
+
+    function user_info(users, id) {
+        for (let user of users) {
+            if (user.id == id) {
+                let info_div = $('#user_info')
+                info_div.empty()
+                for (item in user) {
+                    info_div.append(`<p>${item}:${user[item]}<p>`)
+                }
+                break
+            }
+
+        }
+    }
+</script>
+
+</body>
+</html>
