@@ -36,8 +36,8 @@
             </tr>
             {% for u in content['users'] %}
                 <tr>
-                    <td><a href="/users/{{ u['id'] }}" >{{ u['firstname'] }}</a></td>
-{#                    <td><a href="/users/?id={{ u['id'] }}" >{{ u['firstname'] }}</a></td>#}
+                    <td><a href="/users/{{ u['id'] }}">{{ u['firstname'] }}</a></td>
+                    {#                    <td><a href="/users/?id={{ u['id'] }}" >{{ u['firstname'] }}</a></td>#}
                 </tr>
 
             {% endfor %}
