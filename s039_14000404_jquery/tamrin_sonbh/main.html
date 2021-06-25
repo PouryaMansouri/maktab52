@@ -26,14 +26,34 @@
 
 </head>
 <body>
-<input type="text" onchange="addData();" id="number" autofocus>
+<input type="text" id="number" autofocus>
 <br><br>
 
 <table id="table">
-    <script>
-
-    </script>
 
 </table>
+
+<script>
+    function multi(number) {
+        let table = $('#table')
+        for (let i = 1; i <= number; i++) {
+            let new_row = $("<tr></tr>").appendTo(table)
+            for (let j = 1; j <= number; j++) {
+                new_row.append(`<td>${j * i}</td>`)
+            }
+        }
+
+    }
+
+    $(document).ready(function () {
+        $('#number').onclick(function () {
+            let number = $(this).val()
+            multi(number)
+        })
+    })
+
+
+</script>
+
 </body>
 </html>

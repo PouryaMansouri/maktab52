@@ -34,28 +34,34 @@
                     users:
                 </th>
             </tr>
-            {% for u in content['users'] %}
-                <tr>
-                    <td><a href="/users/{{ u['id'] }}">{{ u['firstname'] }}</a></td>
-                    {#                    <td><a href="/users/?id={{ u['id'] }}" >{{ u['firstname'] }}</a></td>#}
-                </tr>
+            <tr>
+                <td>
+                    <p>asdasdasd {{ content | safe }} sdfsdfsdf</p>
 
-            {% endfor %}
+                </td>
+            </tr>
+            {#            {% for u in content['users'] %}#}
+            {#                <tr>#}
+            {#                    <td><a href="/users/{{ u['id'] }}">{{ u['firstname'] }}</a></td>#}
+            {#                    <td><a href="/users/?id={{ u['id'] }}" >{{ u['firstname'] }}</a></td>#}
+            {#                </tr>#}
+            {##}
+            {#            {% endfor %}#}
         </table>
     </div>
-    <div style="width: 70%">
-        {% if content['user'] %}
-            <pre>
-            first_name : {{ content['user']['firstname'] }}
-            id: {{ content['user']['id'] }}
-            username: {{ content['user']['username'] }}
-            firstname: {{ content['user']['firstname'] }}
-            lastname: {{ content['user']['lastname'] }}
-            phone: {{ content['user']['phone'] }}
-            code: {{ content['user']['code'] }}
-            </pre>
-        {% endif %}
-    </div>
+    {#    <div style="width: 70%">#}
+    {#        {% if content['user'] %}#}
+    {#            <pre>#}
+    {#            first_name : {{ content['user']['firstname'] }}#}
+    {#            id: {{ content['user']['id'] }}#}
+    {#            username: {{ content['user']['username'] }}#}
+    {#            firstname: {{ content['user']['firstname'] }}#}
+    {#            lastname: {{ content['user']['lastname'] }}#}
+    {#            phone: {{ content['user']['phone'] }}#}
+    {#            code: {{ content['user']['code'] }}#}
+    {#            </pre>#}
+    {#        {% endif %}#}
+    {#    </div>#}
 </main>
 </body>
 </html>
