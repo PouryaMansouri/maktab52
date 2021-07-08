@@ -4,4 +4,9 @@ from django.contrib import admin
 
 from .models import Table
 
-admin.site.register(Table)
+
+class TableAdmin(admin.ModelAdmin):
+    list_display = ( 'name', 'capacity', 'created', 'modified')
+
+
+admin.site.register(Table, TableAdmin)

@@ -1,6 +1,6 @@
 from django.db import models
+from core.models import TimeStampedModel
 
-# Create your models here.
 STATUS = {
     ('FR', 'free'),
     ('FU', 'full'),
@@ -9,7 +9,9 @@ STATUS = {
 }
 
 
-class Table(models.Model):
+# Create your models here.
+
+class Table(TimeStampedModel):
     """
     table model
     """
@@ -18,5 +20,7 @@ class Table(models.Model):
     capacity = models.IntegerField()
     status = models.CharField(max_length=10, choices=STATUS, default='FR')
 
+    # status = Choices(STATUS)
+
     def __str__(self):
-        return f"{self.name}|{self.capacity} sits|{self.status}"
+        return f"{self.name} | {self.capacity} sits|{self.status} | {self.modified}"
