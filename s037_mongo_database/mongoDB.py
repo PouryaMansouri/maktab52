@@ -2,6 +2,8 @@ import pymongo
 from bson import ObjectId  # Independent BSON codec for Python that doesn’t depend on MongoDB.
 import json
 
+from icecream import ic
+
 client = pymongo.MongoClient("localhost", 27017)
 db = client.phonebook
 id = db.contact.insert_one({"first_name": "mohamad", "last_name": "ayazadeh",
@@ -33,15 +35,15 @@ def remove(user_id):
 
 
 print("all_data")
-read_all()
+ic("all_data", read_all())
 
-print("update")
-user_id = ObjectId('60d4789cc507707bc58ff7a0')  # Independent BSON codec for Python that doesn’t depend on MongoDB.
-new_phone = "111111111111"
-update_phone(db, user_id, new_phone, title="home")
-
-print("remove_user")
-remove(id)
-print("-------------")
-print("all_data")
-read_all()
+# print("update")
+# user_id = ObjectId('60d4789cc507707bc58ff7a0')  # Independent BSON codec for Python that doesn’t depend on MongoDB.
+# new_phone = "111111111111"
+# update_phone(db, user_id, new_phone, title="home")
+#
+# print("remove_user")
+# remove(id)
+# print("-------------")
+# print("all_data")
+# read_all()
