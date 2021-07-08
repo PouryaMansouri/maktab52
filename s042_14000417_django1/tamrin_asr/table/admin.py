@@ -6,7 +6,7 @@ from .models import Table
 
 
 class TableAdmin(admin.ModelAdmin):
-    list_display = ( 'name', 'capacity', 'created', 'modified')
+    list_display = ('name', 'status', 'capacity', 'created', 'modified')
 
 
 admin.site.register(Table, TableAdmin)
