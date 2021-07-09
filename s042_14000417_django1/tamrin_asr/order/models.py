@@ -36,7 +36,7 @@ class Receipt(TimeStampedModel):
 
     @property
     def final_price(self):
-        orders_price = list(map(lambda x: x.item.price.amount, list(Order.objects.filter(receipt=self))))
+        orders_price = list(map(lambda x: (x.item.price.amount * x.count), list(Order.objects.filter(receipt=self))))
         return sum(orders_price)
 
     def __str__(self):

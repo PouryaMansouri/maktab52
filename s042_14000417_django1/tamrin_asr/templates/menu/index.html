@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        main {
+            display: flex;
+        }
+    </style>
+
+</head>
+<body>
+<h2>Category</h2>
+<div style="width: 10%">
+
+    <table>
+        <tr>
+            <th>
+                Category name
+            </th>
+
+        </tr>
+        {% for category in categories %}
+            <tr>
+                <td>
+                    <a>{{ category.name }}</a>
+                </td>
+
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<h2>Items</h2>
+<div style="width: 10%">
+
+    <table>
+        <tr>
+            <th>
+                Item name
+            </th>
+
+        </tr>
+        {% for item in items %}
+            <tr>
+                <td>
+                    <a href="{% url 'menu:item_detail' item.id %}">{{ item.name }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+</body>
+</html>

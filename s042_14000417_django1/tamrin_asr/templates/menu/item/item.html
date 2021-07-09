@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        main {
+            display: flex;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>Items</h2>
+<div style="width: 30%">
+
+    <table>
+        <tr>
+            <th>
+                Item name
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                price
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+                <a>{{ item.name }}</a>
+            </td>
+            <td>
+                {{ item.category }}
+            </td>
+            <td>
+                {{ item.price.amount }}
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>

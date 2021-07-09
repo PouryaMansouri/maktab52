@@ -20,7 +20,5 @@ class Table(TimeStampedModel):
     capacity = models.IntegerField()
     status = models.CharField(max_length=10, choices=STATUS, default='FR')
 
-    # status = Choices(STATUS_ORDER)
-
     def __str__(self):
         return f"{self.name} | {self.capacity} sits | status: {self.status} "
